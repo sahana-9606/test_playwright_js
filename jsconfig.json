@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "checkJs": false
+  },
+  "include": ["tests/**/*.js", "playwright.config.ts"],
+  "exclude": ["node_modules", "playwright-report", "test-results"]
+}
