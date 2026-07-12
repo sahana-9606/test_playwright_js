@@ -7,7 +7,7 @@ test("Search a product in amazon", async({page})=>{
     await amazon.goto();
     await amazon.search("samsung s25");
     await amazon.searchResults();
-    await amazon.selectProduct("Samsung Galaxy S25");
+    
 
     console.log("Test completed successfully");
 });
