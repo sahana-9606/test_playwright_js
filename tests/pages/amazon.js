@@ -22,6 +22,11 @@ class Amazon {
         await expect(this.page.getByText(/results for/i)).toBeVisible()
     }
 
+    async selectProduct(productName){
+        await this.page.getByRole('link', { name: productName }).click();
+        await expect(this.page).toHaveTitle(new RegExp(productName, 'i'));
+    }
+
 }
 
 exports.Amazon = Amazon;
