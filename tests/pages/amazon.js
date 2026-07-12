@@ -22,10 +22,7 @@ class Amazon {
         await expect(this.page.getByText(/results for/i)).toBeVisible()
     }
 
-    async searchResultsCount(){
-        const count = await this.page.locator('.s-result-item').count()
-        console.log(`Total search results: ${count}`)
-    }
+    
 
 }
 
