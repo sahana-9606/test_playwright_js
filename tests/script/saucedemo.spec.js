@@ -27,7 +27,6 @@ test('Login and add item to cart', async ({ page }) => {
     console.log('Item in cart:', cartItemName);
     expect(cartItemName).toBe(addedItemName);
 
-
-
+    await page.close();
     
 });
