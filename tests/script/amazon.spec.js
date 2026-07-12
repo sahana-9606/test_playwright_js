@@ -9,6 +9,7 @@ test("Search a product in amazon", async({page})=>{
     await amazon.searchResults();
     const products = await amazon.getAllProducts();
     console.log(products);
+    await amazon.addFirstProductToCart();
 
     console.log("Test completed successfully");
 });

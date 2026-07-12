@@ -39,6 +39,20 @@ class Amazon {
         return products
     }
 
+    async addFirstProductToCart(){
+        const product = this.productTiles.first()
+        const titleLink = product.locator('a:has(h2)').first()
+
+        const popupPromise = this.page.waitForEvent('popup')
+        await titleLink.click()
+        const productPage = await popupPromise
+
+        await productPage.getByRole('button', { name: 'Add to cart' }).click()
+        await expect(productPage.getByRole('link', { name: /item.*in cart/i })).toBeVisible()
+
+        return productPage
+    }
+
 }
 
 exports.Amazon = Amazon;
